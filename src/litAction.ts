@@ -6,11 +6,21 @@ const _litAction = async () => {
   const conditions = [
     {
       contractAddress: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
-      standardContractType: "ERC20",
       chain: "sepolia",
-      method: "allowance",
-      parameters: [owner, spender],
+      functionName: "allowance",
+      functionParams: [owner, spender],
+      functionAbi: {
+        type: "function",
+        name: "allowance",
+        inputs: [
+          { name: "owner", type: "address", internalType: "address" },
+          { name: "spender", type: "address", internalType: "address" },
+        ],
+        outputs: [{ name: "", type: "uint256", internalType: "uint256" }],
+        stateMutability: "view",
+      },
       returnValueTest: {
+        key: "",
         comparator: ">=",
         value: "0",
       },
